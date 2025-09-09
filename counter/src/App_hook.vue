@@ -1,13 +1,14 @@
 <script setup>
-import{ref,computed} from 'vue';
+import { reactive,ref } from 'vue';
 
-  const cnt = ref(0);
-  const oddEven = computed(() => (cnt.value%2) ? '홀수' : '짝수');
-  const counter = () => cnt.value++;
+const count = ref(0);
+
+const obj1 = reactive({
+  name : "kimg",age : 33
+})
 
 </script>
 <template>
-  <p>{{ cnt }}</p>
-  <p>홀짝 판별: {{ oddEven }}</p>
-  <button @click="counter">click</button>
+<p>count : {{ count }}</p>
+<p>obj1 : {{ obj1.name }}/{{ obj1.age }}</p>
 </template>
